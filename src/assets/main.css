@@ -1,5 +1,5 @@
 body {
-  background-color: #F1F1FC;
+  background-color: #f1f1fc;
   min-height: 100vh;
 }
 
@@ -9,9 +9,11 @@ body {
   padding: 2rem;
   font-weight: normal;
   font-family: sans-serif;
+  margin-bottom: 300px;
 }
 p {
   font-size: 1.2rem;
+  text-align: center;
 }
 
 a,
