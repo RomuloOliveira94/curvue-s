@@ -1,29 +1,35 @@
 <script setup lang="ts">
-  import Canva from "./components/Canva.vue";
+  import CurveSGraphic from "./components/CurveSGraphic.vue";
+  import ExplainSection from "./components/ExplainSection.vue";
+  import Footer from "./components/Footer.vue";
+  import Header from "./components/Header.vue";
 </script>
 
 <template>
-  <main>
-    <header>
-      <div>
-        <h1>Gráfico de andamento em curva S</h1>
-        <p>
-          Este gráfico mostra o andamento previsto e o andamento real do projeto
-          ao longo dos meses.
-        </p>
-        <div class="obs-section">
-          <div class="blue-section">
-            <span class="line-blue"></span>
-            <p>Previsão de Andamento do Projeto</p>
-          </div>
-          <div class="red-section">
-            <span class="line-red"></span>
-            <p>Andamento Real do Projeto</p>
-          </div>
+  <main id="main-content">
+    <Header />
+    <div>
+      <h1>Gráfico de andamento em curva S</h1>
+      <p>
+        Este gráfico mostra o andamento previsto e o andamento real de um
+        projeto que deve ser realizado no período de um ano.
+      </p>
+      <div class="obs-section">
+        <div class="blue-section">
+          <span class="line-blue"></span>
+          <p>Previsão de Andamento do Projeto</p>
+        </div>
+        <div class="red-section">
+          <span class="line-red"></span>
+          <p>Andamento Real do Projeto</p>
         </div>
       </div>
-    </header>
-    <Canva />
+    </div>
+    <CurveSGraphic />
+    <br />
+    <br />
+    <ExplainSection />
+    <Footer />
   </main>
 </template>
 
@@ -37,8 +43,8 @@
   }
 
   h1 {
-    font-size: 2rem;
     text-align: center;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
 
@@ -70,14 +76,14 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #0000D3;
+    background-color: #0000d3;
   }
 
   .line-red {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #D3003D;
+    background-color: #d3003d;
     margin-right: 10px;
   }
 </style>
