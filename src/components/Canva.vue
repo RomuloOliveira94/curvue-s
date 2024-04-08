@@ -148,7 +148,7 @@
     margin: 0 auto;
     border: 1px solid #000;
     padding: 12px;
-    background-color: azure;
+    background-color: white;
     border: 2px solid black;
     border-radius: 10px;
   }

@@ -8,8 +8,8 @@
       <div>
         <h1>Gráfico de andamento</h1>
         <p>
-          Este gráfico mostra o andamento previsto e o andamento real de um
-          projeto.
+          Este gráfico mostra o andamento previsto e o andamento real do projeto
+          ao longo dos meses.
         </p>
         <div class="obs-section">
           <div class="blue-section">
@@ -53,12 +53,24 @@
     margin-top: 1rem;
   }
 
+  .blue-section {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    gap: 12px;
+  }
+
+  .red-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
   .line-blue {
     display: inline-block;
     width: 20px;
     height: 20px;
     background-color: blue;
-    margin-right: 10px;
   }
 
   .line-red {
