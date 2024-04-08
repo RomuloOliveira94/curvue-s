@@ -99,7 +99,7 @@
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
         ctx.stroke();
-        
+
         ctx.beginPath();
         ctx.fillStyle = "#D3003D";
         ctx.fillText(
@@ -156,6 +156,9 @@
 
 <template>
   <canvas ref="canvas" />
+  <small
+    >Este gráfico foi desenvolvido utilizando HTML, Vue.JS, e Canvas API
+  </small>
 </template>
 
 <style>
@@ -167,5 +170,12 @@
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
+  }
+
+  small {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
   }
 </style>
