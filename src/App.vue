@@ -6,7 +6,7 @@
   <main>
     <header>
       <div>
-        <h1>Gráfico de andamento</h1>
+        <h1>Gráfico de andamento em curva S</h1>
         <p>
           Este gráfico mostra o andamento previsto e o andamento real do projeto
           ao longo dos meses.
@@ -70,14 +70,14 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: blue;
+    background-color: #0000D3;
   }
 
   .line-red {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: #D3003D;
     margin-right: 10px;
   }
 </style>

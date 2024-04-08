@@ -5,6 +5,7 @@
   const canvas = ref<HTMLCanvasElement | null>(null);
   const andamentoPrevisto = [0, 5, 10, 15, 25, 35, 45, 55, 65, 75, 85, 95, 100];
   const andamentoReal = [0, 2, 5, 10, 20, 25, 30, 35, 45, 65, 75, 85, 90];
+
   const meses = [
     "Jan",
     "Fev",
@@ -32,15 +33,16 @@
     "80%",
     "90%",
     "100%",
-  ]
+  ];
 
   onMounted(() => {
     const ctx = canvas.value?.getContext("2d");
     if (!canvas.value || !ctx) return;
-    
+
     canvas.value.width = 1250;
     canvas.value.height = 650;
-    ctx.translate(0, 30)
+    ctx.translate(30, 30);
+
     const pontosPrevistos = andamentoPrevisto.map((andamento, index) => {
       return {
         meses: index * 100,
@@ -64,19 +66,24 @@
       } else {
         ctx.lineTo(ponto.meses, ponto.andamento);
         ctx.lineWidth = 2;
-        ctx.strokeStyle = "blue";
+        ctx.strokeStyle = "#0000D3";
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
         ctx.stroke();
+
         ctx.beginPath();
-        ctx.fillStyle = "blue";
-        ctx.fillText(andamentoPrevisto[index] + "%", ponto.meses, ponto.andamento - 10);
+        ctx.fillStyle = "#0000D3";
         ctx.arc(ponto.meses, ponto.andamento, 8, 0, Math.PI * 2);
         ctx.fill();
+
         ctx.font = "18px sans serif";
         ctx.textAlign = "end";
         ctx.textBaseline = "bottom";
-        
+        ctx.fillText(
+          andamentoPrevisto[index] + "%",
+          ponto.meses,
+          ponto.andamento - 10
+        );
       }
     });
     ctx.closePath();
@@ -87,19 +94,24 @@
         ctx.moveTo(ponto.meses, ponto.andamento);
       } else {
         ctx.lineTo(ponto.meses, ponto.andamento);
-        ctx.strokeStyle = "red";
+        ctx.strokeStyle = "#D3003D";
         ctx.lineWidth = 2;
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
         ctx.stroke();
+        
         ctx.beginPath();
-        ctx.fillStyle = "red";
-        ctx.fillText(andamentoReal[index] + "%", ponto.meses, ponto.andamento - 10);
+        ctx.fillStyle = "#D3003D";
+        ctx.fillText(
+          andamentoReal[index] + "%",
+          ponto.meses,
+          ponto.andamento - 10
+        );
         ctx.arc(ponto.meses, ponto.andamento, 8, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.font = "18px sans serif";
-        ctx.fillStyle = "green";
+        ctx.fillStyle = "black";
         ctx.textAlign = "end";
         ctx.textBaseline = "bottom";
         ctx.fillText(meses[index - 1], ponto.meses, 620);
@@ -108,22 +120,27 @@
     ctx.closePath();
 
     ctx.beginPath();
+
     ctx.moveTo(0, 600);
     ctx.lineTo(1200, 600);
     ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
     ctx.stroke();
-    ctx.closePath();
 
-    ctx.beginPath();
     ctx.moveTo(0, 600);
     ctx.lineTo(0, 0);
     ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
     ctx.stroke();
-    ctx.closePath();
 
-    ctx.beginPath();
+    ctx.save();
+    ctx.translate(0, 300);
+    ctx.rotate(-Math.PI / 2);
+    ctx.font = "20px sans serif";
+    ctx.textAlign = "center";
+    ctx.fillText("Andamento do projeto", 0, 0);
+    ctx.restore();
+
     ctx.moveTo(0, 600);
     porcentagem.forEach((porcentagem, index) => {
       ctx.fillStyle = "black";
@@ -134,7 +151,6 @@
     });
 
     ctx.closePath();
-
   });
 </script>
 
