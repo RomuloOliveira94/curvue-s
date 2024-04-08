@@ -7,8 +7,8 @@
 <style>
   .section-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: start;
+    flex-direction: column;
     margin-top: 1rem;
   }
 </style>
