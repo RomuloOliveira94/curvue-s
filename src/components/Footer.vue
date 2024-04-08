@@ -11,16 +11,24 @@
 </template>
 
 <style scoped>
+
+  div {
+    text-align: center;
+    margin-top: 4rem;
+  }
+
   nav {
     display: flex;
     gap: 1rem;
     justify-content: center;
     margin-top: 1rem;
+    font-size: 2rem;
   }
 
   span {
     display: block;
     text-align: center;
     margin-top: 1rem;
+    font-size: 1.5rem;
   }
 </style>

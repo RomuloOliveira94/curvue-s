@@ -42,10 +42,16 @@
     padding: 2rem 0;
   }
 
+  p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
   h1 {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .logo {
@@ -63,12 +69,14 @@
     display: flex;
     align-items: center;
     margin-right: 2rem;
+    margin-bottom: 2rem;
     gap: 12px;
   }
 
   .red-section {
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
     gap: 12px;
   }
 
