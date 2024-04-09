@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span>Este projeto desenvolvido por Rômulo Oliveira</span>
+    <span>Este projeto foi desenvolvido por Rômulo Oliveira</span>
     <nav>
       <a href="https://www.linkedin.com/in/roliveira94/" target="_blank"
         >Linkedin</a
