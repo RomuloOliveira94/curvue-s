@@ -3,10 +3,10 @@
   import { ref, onMounted } from "vue";
 
   const canvas = ref<HTMLCanvasElement | null>(null);
-  const andamentoPrevisto = [0, 5, 10, 15, 25, 35, 45, 55, 65, 75, 85, 95, 100];
-  const andamentoReal = [0, 2, 5, 10, 20, 25, 30, 35, 45, 65, 75, 85, 90];
+  const planned = [0, 5, 10, 15, 25, 35, 45, 55, 65, 75, 85, 95, 100];
+  const actual = [0, 2, 5, 10, 20, 25, 30, 35, 45, 65, ];
 
-  const meses = [
+  const month = [
     "Jan",
     "Fev",
     "Mar",
@@ -21,7 +21,7 @@
     "Dez",
   ];
 
-  const porcentagem = [
+  const percentage = [
     "0%",
     "10%",
     "20%",
@@ -43,28 +43,26 @@
     canvas.value.height = 650;
     ctx.translate(30, 30);
 
-    const pontosPrevistos = andamentoPrevisto.map((andamento, index) => {
+    const plannedPoints = planned.map((andamento, index) => {
       return {
-        meses: index * 100,
+        month: index * 100,
         andamento: 600 - andamento * 6,
       };
     });
 
-    const pontosReais = andamentoReal.map((andamento, index) => {
+    const actualPoints = actual.map((andamento, index) => {
       return {
-        meses: index * 100,
+        month: index * 100,
         andamento: 600 - andamento * 6,
       };
     });
-
-    console.log(pontosPrevistos);
 
     ctx.beginPath();
-    pontosPrevistos.forEach((ponto, index) => {
+    plannedPoints.forEach((point, index) => {
       if (index === 0) {
-        ctx.moveTo(ponto.meses, ponto.andamento);
+        ctx.moveTo(point.month, point.andamento);
       } else {
-        ctx.lineTo(ponto.meses, ponto.andamento);
+        ctx.lineTo(point.month, point.andamento);
         ctx.lineWidth = 2;
         ctx.strokeStyle = "#0000D3";
         ctx.lineCap = "round";
@@ -73,27 +71,33 @@
 
         ctx.beginPath();
         ctx.fillStyle = "#0000D3";
-        ctx.arc(ponto.meses, ponto.andamento, 8, 0, Math.PI * 2);
+        ctx.arc(point.month, point.andamento, 8, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.font = "18px sans serif";
         ctx.textAlign = "end";
         ctx.textBaseline = "bottom";
         ctx.fillText(
-          andamentoPrevisto[index] + "%",
-          ponto.meses,
-          ponto.andamento - 10
+          planned[index] + "%",
+          point.month,
+          point.andamento - 10
         );
+
+        ctx.font = "18px sans serif";
+        ctx.fillStyle = "black";
+        ctx.textAlign = "end";
+        ctx.textBaseline = "bottom";
+        ctx.fillText(month[index - 1], point.month, 620);
       }
     });
     ctx.closePath();
 
     ctx.beginPath();
-    pontosReais.forEach((ponto, index) => {
+    actualPoints.forEach((point, index) => {
       if (index === 0) {
-        ctx.moveTo(ponto.meses, ponto.andamento);
+        ctx.moveTo(point.month, point.andamento);
       } else {
-        ctx.lineTo(ponto.meses, ponto.andamento);
+        ctx.lineTo(point.month, point.andamento);
         ctx.strokeStyle = "#D3003D";
         ctx.lineWidth = 2;
         ctx.lineCap = "round";
@@ -103,18 +107,12 @@
         ctx.beginPath();
         ctx.fillStyle = "#D3003D";
         ctx.fillText(
-          andamentoReal[index] + "%",
-          ponto.meses,
-          ponto.andamento - 10
+          actual[index] + "%",
+          point.month,
+          point.andamento - 10
         );
-        ctx.arc(ponto.meses, ponto.andamento, 8, 0, Math.PI * 2);
+        ctx.arc(point.month, point.andamento, 8, 0, Math.PI * 2);
         ctx.fill();
-
-        ctx.font = "18px sans serif";
-        ctx.fillStyle = "black";
-        ctx.textAlign = "end";
-        ctx.textBaseline = "bottom";
-        ctx.fillText(meses[index - 1], ponto.meses, 620);
       }
     });
     ctx.closePath();
@@ -136,18 +134,19 @@
     ctx.save();
     ctx.translate(0, 300);
     ctx.rotate(-Math.PI / 2);
+    ctx.fillStyle = "black";
     ctx.font = "20px sans serif";
     ctx.textAlign = "center";
-    ctx.fillText("Andamento do projeto", 0, 0);
+    ctx.fillText("Progresso", 0, 0);
     ctx.restore();
 
     ctx.moveTo(0, 600);
-    porcentagem.forEach((porcentagem, index) => {
+    percentage.forEach((percentage, index) => {
       ctx.fillStyle = "black";
       ctx.font = "18px sans serif";
       ctx.textAlign = "end";
       ctx.textBaseline = "bottom";
-      ctx.fillText(porcentagem, 50, 600 - index * 60);
+      ctx.fillText(percentage, 50, 600 - index * 60);
     });
 
     ctx.closePath();
