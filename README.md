@@ -1,18 +1,22 @@
-# courvue-s
+# Curvue-s
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is an example of how to make an S-curve graph, using Vue.Js, HTML and CSS3, and javascript's native Canvas API.
 
-## Recommended IDE Setup
+![image](https://github.com/RomuloOliveira94/curvue-s/assets/99622544/6e197305-886b-4737-9334-4e79e543b90a)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Type Support for `.vue` Imports in TS
+## Why S-curve are important?
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+The S-curve shows the amount of work invested and the time in two ways: what was estimated in the planning and what was achieved, which allows the project to be compared and analyzed. In this way, it highlights deviations and is an important ally for:
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+  <ul>
+      <li>Identifying the health of the project;</li>
+      <li>Avoiding negative risks;</li>
+      <li>Making more assertive decisions;</li>
+      <li>Implement improvements during progress;</li>
+      <li>Implement improvements during progress;</li>
+      <li>Ensure project success.</li>
+    </ul>
 
 ## Project Setup
 
