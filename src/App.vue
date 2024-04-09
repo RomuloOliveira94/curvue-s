@@ -9,19 +9,19 @@
   <main id="main-content">
     <Header />
     <div>
-      <h1>Gráfico de andamento em curva S</h1>
+      <h1>Gráfico de progresso em curva S</h1>
       <p>
-        Este gráfico mostra o andamento previsto e o andamento real de um
-        projeto que deve ser realizado no período de um ano.
+        Este gráfico mostra o progresso previsto e o progresso real de um
+        projeto de sistema no período de um ano.
       </p>
       <div class="obs-section">
         <div class="blue-section">
           <span class="line-blue"></span>
-          <p>Previsão de Andamento do Projeto</p>
+          <p>Progresso previsto do Projeto</p>
         </div>
         <div class="red-section">
           <span class="line-red"></span>
-          <p>Andamento Real do Projeto</p>
+          <p>Progresso Real do Projeto</p>
         </div>
       </div>
     </div>
