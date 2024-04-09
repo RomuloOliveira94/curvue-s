@@ -1,4 +1,4 @@
-# Curvue-s
+## [Curvue-s](https://curvues.netlify.app/)
 
 This project is an example of how to make an S-curve graph, using Vue.Js, HTML and CSS3, and javascript's native Canvas API.
 
